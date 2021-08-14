@@ -1,0 +1,64 @@
+{
+  "name": "arboretum",
+  "version": "1.0.0",
+  "description": "This is a new repo called Feline Finder",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run jest",
+    "test:watch": "npm run jest -- --watch ",
+    "test:coverage": "npm run jest -- --coverage",
+    "jest": "jest -c ./config/jest.config.js src",
+    "build": "webpack",
+    "start": "webpack serve",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csamywilliams/arboretum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csamywilliams/arboretum/issues"
+  },
+  "homepage": "https://github.com/csamywilliams/arboretum#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.0",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-styled-components": "^1.12.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^5.0.1",
+    "eslint": "^7.16.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "jest": "^27.0.6",
+    "jest-canvas-mock": "^2.3.1",
+    "jest-styled-components": "^7.0.5",
+    "jest-transform-stub": "^2.0.0",
+    "prettier": "^2.3.2",
+    "style-loader": "^2.0.0",
+    "styled-components": "^5.3.0",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^3.11.1"
+  },
+  "dependencies": {
+    "leaflet": "^1.7.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0",
+    "react-leaflet": "^3.2.1"
+  }
+}
