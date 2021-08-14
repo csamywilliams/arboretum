@@ -15,7 +15,7 @@ The motivation behind this project is to document the list of trees currently on
 ### Issues faced 
 
 - Original implementation of showing a map version was to use Canvas, however it became expensive to compute.
-- 
+- Volume of images and handling them dynamically
 
 
 ## Available Scripts

@@ -1,9 +1,9 @@
-import { getCategories } from 'utils/transformData';
+import { groupCategories } from 'utils/transformData';
 
 import { testData } from '__testHelpers__/testData';
 
-describe('getCategories utils', () => {
-	it('should get all the categories in the data', () => {
-		expect(getCategories(testData)).toEqual(['acer', 'aspen']);
+describe('groupCategories utils', () => {
+	it('should group all the data into categories in the data', () => {
+		expect(groupCategories(testData)).toEqual(['acer', 'aspen']);
 	});
 });
