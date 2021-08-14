@@ -1,6 +1,4 @@
-import React, { Suspense } from 'react';
-
-import { trees } from 'js/trees';
+import React from 'react';
 
 import CardStyled from './Card.styled';
 
