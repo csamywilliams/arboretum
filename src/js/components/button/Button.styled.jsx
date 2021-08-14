@@ -17,6 +17,10 @@ const ButtonStyled = styled.button`
 	line-height: 2.5rem;
 	font-family: ${(props) => props.theme.bodyFont};
 	cursor: pointer;
+
+	&:hover {
+		transform: scale(1.05);
+	}
 `;
 
 export default ButtonStyled;
