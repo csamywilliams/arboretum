@@ -4,7 +4,6 @@ import { devices } from 'utils/devices';
 const CardStyled = styled.section`
 	display: flex;
 	flex-direction: column;
-	flex: 1;
 	margin: 1rem;
 	min-width: 15vw;
 	border-radius: 5px;

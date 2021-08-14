@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import { devices } from 'utils/devices';
 
 const ViewListStyled = styled.div`
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(4, 20vw);
 
 	@media ${devices.laptop} {
 		flex-direction: column;
+		grid-template-columns: repeat(2, 50vw);
 	}
 `;
 
