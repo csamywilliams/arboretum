@@ -16,6 +16,7 @@ The motivation behind this project is to document the list of trees currently on
 
 - Original implementation of showing a map version was to use Canvas, however it became expensive to compute.
 - Volume of images and handling them dynamically
+- Runtime regeneratorRuntime is not defined during asynchronous tests, had to include regenerator-runtime package and import it in the jest setup tests.
 
 
 ## Available Scripts

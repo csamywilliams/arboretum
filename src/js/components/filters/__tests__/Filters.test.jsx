@@ -6,13 +6,25 @@ import { testData } from '__testHelpers__/testData';
 
 import Filters from '../';
 
+const mockDispatch = jest.fn();
+
 const setup = () =>
-	renderWithTheme(<Filters dispatch={jest.fn()} items={testData} />);
+	renderWithTheme(<Filters dispatch={mockDispatch} items={testData} />);
 
 describe('Filters component', () => {
 	beforeEach(setup);
 
+	afterEach(() => jest.clearAllMocks());
+
 	it('should render the Filters component', () => {
-		expect(true).toBe(true);
+		screen.getByText(/tree types:/i);
+
+		screen.getByRole('checkbox', {
+			name: /acer/i,
+		});
+
+		screen.getByRole('checkbox', {
+			name: /aspen/i,
+		});
 	});
 });

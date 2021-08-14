@@ -6,18 +6,22 @@ import ViewList from 'components/view-list';
 
 import { trees } from 'js/trees';
 
+import useFilter from 'hooks/useFilter';
+
 import { ContentStyled, AsideStyled, MainStyled } from './Dashboard.styled';
 
 const Dashboard = () => {
-	const [items, setItems] = useState(trees);
-	const dispatch = () => {};
+	const [initialItems] = useState(trees);
+	const { state, dispatch } = useFilter(trees);
+
+	const { items } = state;
 
 	return (
 		<div>
 			<Banner />
 			<ContentStyled>
 				<AsideStyled>
-					<Filters dispatch={dispatch} items={items} />
+					<Filters dispatch={dispatch} items={initialItems} />
 				</AsideStyled>
 
 				<MainStyled>

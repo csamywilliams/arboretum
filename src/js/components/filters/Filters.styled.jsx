@@ -4,11 +4,11 @@ import { devices } from 'utils/devices';
 const Filters = styled.div`
 	display: flex;
 	flex-direction: column;
-	padding: 0 0 1rem 2rem;
 `;
 
 const FilterCategory = styled.p`
-	font-weight: 400;
+	font-weight: 600;
+	padding: 0 1.5rem;
 `;
 
 export default Filters;

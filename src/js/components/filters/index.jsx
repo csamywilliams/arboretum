@@ -9,7 +9,7 @@ const Filters = ({ dispatch, items }) => {
 	return (
 		<FiltersStyled>
 			<FilterCategory>Tree Types:</FilterCategory>
-			<List id="tree-type-list" options={items} />
+			<List id="tree-type-list" options={items} dispatch={dispatch} />
 		</FiltersStyled>
 	);
 };
