@@ -19,6 +19,7 @@ const CardStyled = styled.section`
 const CardImage = styled.img`
 	margin: 0;
 	padding: 0;
+	height: 20vh;
 `;
 
 export default CardStyled;

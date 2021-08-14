@@ -1,4 +1,4 @@
-export const trees = [
+export const testData = [
 	{
 		botanicalName: 'Acer amplum',
 		commonName: 'Broad Maple',

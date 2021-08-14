@@ -4,10 +4,6 @@ import { devices } from 'utils/devices';
 const ContentStyled = styled.div`
 	display: flex;
 	flex-direction: row;
-
-	@media ${devices.laptop} {
-		flex-direction: column;
-	}
 `;
 
 const AsideStyled = styled.aside`
