@@ -33,6 +33,11 @@ const theme = {
 			bg: SECONDARY_COLOR,
 			color: WHITE,
 		},
+		close: {
+			bg: WHITE,
+			color: STEEL_GREY,
+			border: STEEL_GREY,
+		},
 	},
 	card: {
 		border: SECONDARY_COLOR,

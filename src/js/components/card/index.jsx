@@ -5,12 +5,12 @@ import { truncateWords } from 'utils/stringUtils';
 
 import CardStyled, { CardImage } from './Card.styled';
 
-const Card = ({ data }) => {
+const Card = ({ data, onClick }) => {
 	const filename = data.botanicalName.replace(/\s+/g, '-').toLowerCase();
 	const imageSrc = `../${filename}.png`;
 
 	return (
-		<CardStyled>
+		<CardStyled onClick={() => onClick(data)}>
 			<Suspense fallback={<p>Loading image...</p>}>
 				<CardImage src={imageSrc} alt={`Image of ${data.commonName}`} />
 			</Suspense>
@@ -20,8 +20,13 @@ const Card = ({ data }) => {
 	);
 };
 
+Card.defaultProps = {
+	onClick() {},
+};
+
 Card.propTypes = {
 	data: PropTypes.shape().isRequired,
+	onClick: PropTypes.func,
 };
 
 export default Card;
