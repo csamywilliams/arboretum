@@ -23,6 +23,9 @@ The motivation behind this project is to document the list of trees currently on
 
 - Create collapsable filter list
 - Filter by more than one category (may need architectural restructure)
+- Add lazy loading to items
+- Add images
+- Add/Edit note functionality
 
 
 ## Available Scripts
