@@ -25,14 +25,22 @@ const Dashboard = () => {
 		setModalIsOpen(true);
 	};
 
+	const viewModalButtonProps = {
+		buttonText: 'Close',
+		onButtonClick() {},
+		buttonAriaLabel: 'Close modal',
+	};
+
 	return (
 		<div>
 			<ModalOverlay
 				modalIsOpen={modalIsOpen}
 				setModalIsOpen={setModalIsOpen}
+				buttonProps={viewModalButtonProps}
 			>
 				<h1>{item.commonName}</h1>
-				<h2>{item.botanicalName}</h2>
+				<h2>{`${item.botanicalName} (${item.category})`}</h2>
+				<p>{item.description}</p>
 			</ModalOverlay>
 			<Banner />
 			<ContentStyled>

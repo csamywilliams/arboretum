@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import ModalStyled, { CloseButton } from './Modal.styled';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Modal from 'react-modal';
+
+import Button from 'components/button';
 
 const customStyles = {
 	content: {
-		minWidth: '50vw',
-		minHeight: '50vh',
+		width: '30vw',
+		height: '50vh',
 		top: '50%',
 		left: '50%',
 		right: 'auto',
@@ -17,24 +19,49 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-const ModalOverlay = ({ children, modalIsOpen, setModalIsOpen }) => {
+const ModalOverlay = ({
+	children,
+	modalIsOpen,
+	setModalIsOpen,
+	buttonProps,
+}) => {
 	const onClose = () => setModalIsOpen(false);
 
+	const { buttonText, buttonAriaLabel, onButtonClick } = buttonProps;
+
+	const onClick = () => {
+		onButtonClick();
+		onClose();
+	};
+
 	return (
-		<ModalStyled>
-			<Modal
-				isOpen={modalIsOpen}
-				onRequestClose={onClose}
-				contentLabel="Modal"
-				style={customStyles}
-			>
-				<CloseButton onClick={onClose} aria-label="Close modal">
-					X
-				</CloseButton>
-				<div>{children}</div>
-			</Modal>
-		</ModalStyled>
+		<Modal
+			isOpen={modalIsOpen}
+			onRequestClose={onClose}
+			contentLabel="Modal"
+			style={customStyles}
+		>
+			<div>{children}</div>
+			<Button
+				text={buttonText}
+				ariaLabel={buttonAriaLabel}
+				onClick={onClick}
+			/>
+		</Modal>
 	);
+};
+
+ModalOverlay.defaultProps = {
+	onClick() {},
+};
+
+ModalOverlay.propTypes = {
+	buttonProps: PropTypes.shape({
+		buttonText: PropTypes.string.isRequired,
+		buttonAriaLabel: PropTypes.string.isRequired,
+		onButtonClick: PropTypes.func.isRequired,
+	}).isRequired,
+	onClick: PropTypes.func,
 };
 
 export default ModalOverlay;
