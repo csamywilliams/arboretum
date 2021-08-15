@@ -17,7 +17,7 @@ describe('Filters component', () => {
 	afterEach(() => jest.clearAllMocks());
 
 	it('should render the Filters component', () => {
-		screen.getByText(/tree types:/i);
+		screen.getByText(/species/i);
 
 		screen.getByRole('checkbox', {
 			name: /acer/i,

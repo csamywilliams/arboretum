@@ -19,11 +19,11 @@ const Banner = () => {
 					ariaLabel="Add a tree"
 					primary
 				/>
-				<Button
-					text="View trees"
+				{/* <Button
+					text="Map view"
 					onClick={viewItems}
-					ariaLabel="View all trees"
-				/>
+					ariaLabel="Map view of trees"
+				/> */}
 			</Actions>
 		</BannerStyled>
 	);
