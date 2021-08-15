@@ -6,6 +6,7 @@ const BannerStyled = styled.header`
 	align-items: center;
 	justify-content: space-between;
 	background-color: ${(props) => props.theme.headerBg};
+	box-shadow: 0px 1px 1px ${(props) => props.theme.boxShadow};
 `;
 
 const Title = styled.h1`

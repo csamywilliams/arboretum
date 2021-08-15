@@ -1,32 +1,20 @@
 import React from 'react';
-import Button from 'components/button';
+import PropTypes from 'prop-types';
 
 import BannerStyled, { Title, Actions } from './Banner.styled';
 
-const Banner = () => {
-	const addItem = () => {};
+const Banner = ({ children }) => {
+    return (
+        <BannerStyled>
+            <Title>The Arboretum</Title>
 
-	const viewItems = () => {};
+            <Actions>{children}</Actions>
+        </BannerStyled>
+    );
+};
 
-	return (
-		<BannerStyled>
-			<Title>The Arboretum</Title>
-
-			<Actions>
-				<Button
-					text="Add"
-					onClick={addItem}
-					ariaLabel="Add a tree"
-					primary
-				/>
-				<Button
-					text="View trees"
-					onClick={viewItems}
-					ariaLabel="View all trees"
-				/>
-			</Actions>
-		</BannerStyled>
-	);
+Banner.propTypes = {
+    children: PropTypes.node.isRequired,
 };
 
 export default Banner;
