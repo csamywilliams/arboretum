@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { devices } from 'utils/devices';
 
 const CardStyled = styled.section`
 	display: flex;
@@ -10,6 +9,10 @@ const CardStyled = styled.section`
 	padding: 0.5rem;
 	box-shadow: ${(props) => props.theme.boxShadow} 0px 8px 24px;
 	cursor: pointer;
+
+	& > h2 {
+		margin: 0;
+	}
 
 	&:hover {
 		transform: scale(1.05);
