@@ -1,8 +1,8 @@
 import { useReducer } from 'react';
-import filterReducer from 'reducers/filterReducer';
+import itemsReducer from 'reducers/itemsReducer';
 
-const useFilter = (items) => {
-    const [state, dispatch] = useReducer(filterReducer, { items });
+const useItems = (items) => {
+    const [state, dispatch] = useReducer(itemsReducer, { items });
 
     return {
         state,
@@ -10,4 +10,4 @@ const useFilter = (items) => {
     };
 };
 
-export default useFilter;
+export default useItems;

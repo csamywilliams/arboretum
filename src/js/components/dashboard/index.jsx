@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useReducer } from 'react';
 
 import Banner from 'components/banner';
 import Button from 'components/button';
@@ -7,15 +7,15 @@ import ViewList from 'components/view-list';
 import AddItem from 'components/add-item';
 import ModalOverlay from 'components/modal';
 
-import { trees } from 'js/trees';
+import itemsReducer from 'reducers/itemsReducer';
 
-import useFilter from 'hooks/useFilter';
+import { sortItemsAlphabetically } from 'utils/transformData';
+import trees from 'js/trees';
 
 import { ContentStyled, AsideStyled, MainStyled } from './Dashboard.styled';
 
 const Dashboard = () => {
-    const [initialItems] = useState(trees);
-    const { state, dispatch } = useFilter(trees);
+    const [state, dispatch] = useReducer(itemsReducer, { items: sortItemsAlphabetically(trees) });
     const [addModalIsOpen, setAddModalIsOpen] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [item, setItem] = useState({});
@@ -50,7 +50,7 @@ const Dashboard = () => {
             </Banner>
             <ContentStyled>
                 <AsideStyled>
-                    <Filters dispatch={dispatch} items={initialItems} />
+                    <Filters dispatch={dispatch} items={items} />
                 </AsideStyled>
 
                 <MainStyled>
