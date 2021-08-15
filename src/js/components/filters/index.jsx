@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import FiltersStyled, { FilterCategory } from './Filters.styled';
+import FiltersStyled, { FilterCategory, FilterHeading } from './Filters.styled';
 
 import List from './List';
 
 const Filters = ({ dispatch, items }) => {
 	return (
 		<FiltersStyled>
-			<FilterCategory>Tree Types:</FilterCategory>
+			<FilterHeading>Filter by:</FilterHeading>
+			<FilterCategory>Species</FilterCategory>
 			<List id="tree-type-list" options={items} dispatch={dispatch} />
 		</FiltersStyled>
 	);
