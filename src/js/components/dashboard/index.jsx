@@ -7,15 +7,14 @@ import ViewList from 'components/view-list';
 import AddItem from 'components/add-item';
 import ModalOverlay from 'components/modal';
 
-import { trees } from 'js/trees';
+import useItems from 'hooks/useItems';
 
-import useFilter from 'hooks/useFilter';
+import trees from 'js/trees';
 
 import { ContentStyled, AsideStyled, MainStyled } from './Dashboard.styled';
 
 const Dashboard = () => {
-    const [initialItems] = useState(trees);
-    const { state, dispatch } = useFilter(trees);
+    const { state, dispatch, originalItems } = useItems(trees);
     const [addModalIsOpen, setAddModalIsOpen] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [item, setItem] = useState({});
@@ -27,21 +26,7 @@ const Dashboard = () => {
         setModalIsOpen(true);
     };
 
-    const viewModalButtonProps = {
-        buttonText: 'Close',
-        onButtonClick() {},
-        buttonAriaLabel: 'Close modal',
-    };
-
-    const addModalButtonProps = {
-        buttonText: 'Add',
-        onButtonClick() {},
-        buttonAriaLabel: 'Add item',
-    };
-
-    const addItem = () => {
-        setAddModalIsOpen(true);
-    };
+    const addItem = () => setAddModalIsOpen(true);
 
     return (
         <div>
@@ -50,22 +35,18 @@ const Dashboard = () => {
             </Banner>
             <ContentStyled>
                 <AsideStyled>
-                    <Filters dispatch={dispatch} items={initialItems} />
+                    <Filters dispatch={dispatch} items={originalItems.items} />
                 </AsideStyled>
 
                 <MainStyled>
                     <ViewList items={items} onClick={onItemClick} />
                 </MainStyled>
             </ContentStyled>
-            <ModalOverlay
-                modalIsOpen={addModalIsOpen}
-                setModalIsOpen={setAddModalIsOpen}
-                buttonProps={addModalButtonProps}
-            >
+            <ModalOverlay modalIsOpen={addModalIsOpen} setModalIsOpen={setAddModalIsOpen}>
                 <AddItem addDispatch={dispatch} modalIsOpen={setAddModalIsOpen} />
             </ModalOverlay>
-            <ModalOverlay modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} buttonProps={viewModalButtonProps}>
-                <h1>{item.commonName}</h1>
+            <ModalOverlay modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
+                <h1 data-test-id={`modal-item-${item.commonName}`}>{item.commonName}</h1>
                 <h2>{`${item.botanicalName} (${item.category})`}</h2>
                 <p>{item.description}</p>
                 <Button text="Close" ariaLabel="close modal" onClick={() => setModalIsOpen(false)} />

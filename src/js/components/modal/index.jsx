@@ -25,14 +25,9 @@ const ModalOverlay = ({ children, modalIsOpen }) => {
     );
 };
 
-ModalOverlay.defaultProps = {
-    onClick() {},
-};
-
 ModalOverlay.propTypes = {
     children: PropTypes.node.isRequired,
     modalIsOpen: PropTypes.bool.isRequired,
-    onClick: PropTypes.func,
 };
 
 export default ModalOverlay;
