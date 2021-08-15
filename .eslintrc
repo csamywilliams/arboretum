@@ -6,40 +6,23 @@
         "node": true
     },
     "extends": [
-        "airbnb",
-        "prettier"
+        "prettier",
+        "plugin:react/recommended"
     ],
     "globals": {
         "Promise": true,
         "API_URLS": false,
-        "CONFIG": false,
-        "cy": "readonly",
-        "Cypress": "readonly"
+        "CONFIG": false
     },
     "parser": "babel-eslint",
-    "plugins": [
-        "prettier",
-        "react-hooks"
-    ],
+    "plugins": ["react", "react-hooks", "prettier"],
     "rules": {
         "brace-style": [
             "error",
             "1tbs"
         ],
         "camelcase": "warn",
-        "import/no-named-as-default": [
-            "off"
-        ],
-        "import/prefer-default-export": [
-            "off"
-        ],
-        "indent": [
-            "error",
-            4,
-            {
-                "SwitchCase": 1
-            }
-        ],
+        "indent": 0,
         "jsx-a11y/label-has-associated-control": [
             "off"
         ],
@@ -73,19 +56,7 @@
             "off"
         ],
         "no-nested-ternary": "error",
-        "no-param-reassign": [
-            "off"
-        ],
-        "no-restricted-syntax": [
-            "error",
-            {
-                "message": "Do not use setTimeout to get around Bugs.",
-                "selector": "CallExpression[callee.name='setTimeout']"
-            }
-        ],
-        "no-use-before-define": [
-            "off"
-        ],
+        "no-unused-vars": "error",
         "object-curly-newline": [
             "error",
             {
@@ -104,30 +75,10 @@
         "operator-linebreak": [
             "off"
         ],
-        "prettier/prettier": [
-            "error",
-            {
-                "printWidth": 120,
-                "singleQuote": false,
-                "tabWidth": 4,
-                "trailingComma": "es5"
-            }
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
         "react/destructuring-assignment": [
             "off"
         ],
-        "react/jsx-indent": [
-            "error",
-            4
-        ],
-        "react/jsx-indent-props": [
-            "error",
-            4
-        ],
+
         "react-hooks/exhaustive-deps": "warn",
         "react-hooks/rules-of-hooks": "error",
         "semi": [
@@ -156,10 +107,7 @@
             "files": [
                 "*.styled.jsx",
                 "global-theme-inject.js"
-            ],
-            "rules": {
-                "no-unused-expressions": "true"
-            }
+            ]
         }
     ]
 }
