@@ -17,14 +17,15 @@ The motivation behind this project is to document the list of trees currently on
 - Original implementation of showing a map version was to use Canvas, however it became expensive to compute.
 - Volume of images and handling them dynamically
 - Runtime regeneratorRuntime is not defined during asynchronous tests, had to include regenerator-runtime package and import it in the jest setup tests
-- Use of React-modal and jest testing has become difficult. 
+- Use of React-modal and jest testing has become difficult - Solution was to mock the setAppElement but then it still throws errors.
+- Using require.context for dynamic imports for images caused issues with jest. Had to install 'abel-plugin-transform-require-context' and change the babel.config.js to .babelrc to work
 
 ### Todo list
 
 - Create collapsable filter list
 - Filter by more than one category (may need architectural restructure)
 - Add lazy loading to items
-- Add images
+- Research into how images are loaded
 - Add/Edit note functionality
 
 
