@@ -8,30 +8,27 @@ import CardStyled, { CardImage } from './Card.styled';
 import placeholderImg from 'assets/placeholder.png';
 
 const Card = ({ data, onClick }) => {
-	const filename = data.botanicalName.replace(/\s+/g, '-').toLowerCase();
-	const imageSrc = `../${filename}.png`;
+    const filename = data.botanicalName.replace(/\s+/g, '-').toLowerCase();
+    const imageSrc = `../${filename}.png`;
 
-	return (
-		<CardStyled onClick={() => onClick(data)}>
-			<Suspense fallback={<p>Loading image...</p>}>
-				<CardImage
-					src={placeholderImg}
-					alt={`Image of ${data.commonName}`}
-				/>
-			</Suspense>
-			<h2>{data.commonName}</h2>
-			<p>{truncateWords(data.description)}</p>
-		</CardStyled>
-	);
+    return (
+        <CardStyled onClick={() => onClick(data)}>
+            <Suspense fallback={<p>Loading image...</p>}>
+                <CardImage src={placeholderImg} alt={`Image of ${data.commonName}`} />
+            </Suspense>
+            <h2>{data.commonName}</h2>
+            <p>{truncateWords(data.description)}</p>
+        </CardStyled>
+    );
 };
 
 Card.defaultProps = {
-	onClick() {},
+    onClick() {},
 };
 
 Card.propTypes = {
-	data: PropTypes.shape().isRequired,
-	onClick: PropTypes.func,
+    data: PropTypes.shape().isRequired,
+    onClick: PropTypes.func,
 };
 
 export default Card;
