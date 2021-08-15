@@ -22,11 +22,8 @@ const formReducer = (state, action) => {
         },
     });
 
-    const reset = () => addForm;
-
     const actions = {
         update,
-        reset,
     };
 
     return actions[action.type]();

@@ -26,21 +26,7 @@ const Dashboard = () => {
         setModalIsOpen(true);
     };
 
-    const viewModalButtonProps = {
-        buttonText: 'Close',
-        onButtonClick() {},
-        buttonAriaLabel: 'Close modal',
-    };
-
-    const addModalButtonProps = {
-        buttonText: 'Add',
-        onButtonClick() {},
-        buttonAriaLabel: 'Add item',
-    };
-
-    const addItem = () => {
-        setAddModalIsOpen(true);
-    };
+    const addItem = () => setAddModalIsOpen(true);
 
     return (
         <div>
@@ -56,15 +42,11 @@ const Dashboard = () => {
                     <ViewList items={items} onClick={onItemClick} />
                 </MainStyled>
             </ContentStyled>
-            <ModalOverlay
-                modalIsOpen={addModalIsOpen}
-                setModalIsOpen={setAddModalIsOpen}
-                buttonProps={addModalButtonProps}
-            >
+            <ModalOverlay modalIsOpen={addModalIsOpen} setModalIsOpen={setAddModalIsOpen}>
                 <AddItem addDispatch={dispatch} modalIsOpen={setAddModalIsOpen} />
             </ModalOverlay>
-            <ModalOverlay modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} buttonProps={viewModalButtonProps}>
-                <h1>{item.commonName}</h1>
+            <ModalOverlay modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
+                <h1 data-test-id={`modal-item-${item.commonName}`}>{item.commonName}</h1>
                 <h2>{`${item.botanicalName} (${item.category})`}</h2>
                 <p>{item.description}</p>
                 <Button text="Close" ariaLabel="close modal" onClick={() => setModalIsOpen(false)} />

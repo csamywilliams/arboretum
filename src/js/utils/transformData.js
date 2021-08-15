@@ -9,3 +9,5 @@ export const groupCategories = (data) => {
 };
 
 export const sortItemsAlphabetically = (data) => data.sort((a, b) => a.commonName.localeCompare(b.commonName));
+
+export const hyphenateWord = (data) => data.replace(/\s+/g, '-').toLowerCase();

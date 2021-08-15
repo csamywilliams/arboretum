@@ -8,6 +8,7 @@ module.exports = {
         '__integrationTests__',
         '__testHelpers__',
         '__ajaxHandlers__',
+        'app.js',
     ],
     setupFilesAfterEnv: ['<rootDir>/config/setupTests.js'],
     testMatch: ['<rootDir>/src/**/__tests__/**/*.{js,jsx}', '<rootDir>/src/**/__integration__/**/*.{js,jsx}'],
