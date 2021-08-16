@@ -18,7 +18,7 @@ The motivation behind this project is to document the list of trees currently on
 - Volume of images and handling them dynamically
 - Runtime regeneratorRuntime is not defined during asynchronous tests, had to include regenerator-runtime package and import it in the jest setup tests
 - Use of React-modal and jest testing has become difficult - Solution was to mock the setAppElement but then it still throws errors.
-- Using require.context for dynamic imports for images caused issues with jest. Had to install 'abel-plugin-transform-require-context' and change the babel.config.js to .babelrc to work
+- Using require.context for dynamic imports for images caused issues with jest. Had to install 'babel-plugin-transform-require-context' and change the babel.config.js to .babelrc to work. Then had to mock require.context in the tests to make it pass.
 
 ### Todo list
 
