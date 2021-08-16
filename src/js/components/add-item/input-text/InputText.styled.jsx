@@ -1,17 +1,30 @@
 import styled from 'styled-components';
+import { devices } from 'utils/devices';
 
 const InputTextStyled = styled.div`
     border: none;
     display: flex;
+    align-items: center;
 
     & > * {
         flex: 1;
     }
 
     .input {
+        height: 3rem;
+        border: none;
+        border-radius: 3px;
+        background-color: ${(props) => props.theme.input.color};
+        font-family: ${(props) => props.theme.bodyFont};
+
         &__error {
             border: 1px solid ${(props) => props.theme.error};
         }
+    }
+
+    @media ${devices.laptopn} {
+        align-items: flex-start;
+        flex-direction: column;
     }
 `;
 

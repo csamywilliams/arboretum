@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import { truncateWords } from 'utils/stringUtils';
@@ -12,9 +12,9 @@ import placeholderImg from 'assets/placeholder.png';
 const Card = ({ data, onClick }) => {
     const filename = hyphenateWord(data.botanicalName);
 
-    const context = importAll(require.context('../../../assets/images', false, /.png$/i));
+    const context = useCallback(() => importAll(require.context('assets/images', false, /.png$/i)), []);
 
-    const img = context[`${filename}.png`] || placeholderImg;
+    const img = context()[`${filename}.png`] || placeholderImg;
 
     return (
         <CardStyled onClick={() => onClick(data)} data-test-id={`item-${hyphenateWord(data.commonName)}`}>

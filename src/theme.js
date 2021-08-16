@@ -6,6 +6,7 @@ const TEAL = '#4fb2aa';
 const GREY = '#363940';
 const STEEL_GREY = '#555';
 const LIGHT_GREY = 'rgba(149, 157, 165, 0.2) ';
+const STONE_GREY = '#E8E8E8';
 const WARNING_RED = '#B33A3A';
 
 const PRIMARY_COLOR = BLUE;
@@ -21,10 +22,12 @@ const BORDER = STEEL_GREY;
 const PRIMARY_FONT = 'Raleway';
 const HEADER_FONT = 'Rock Salt';
 const ERROR_TEXT_COLOR = WARNING_RED;
+const INPUT_BG = STONE_GREY;
 
 const theme = {
     text: FONT_COLOR,
     bg: BODY_BACKGROUND,
+    bodyFont: PRIMARY_FONT,
     border: BORDER,
     boxShadow: BOX_SHADOW,
     button: {
@@ -46,7 +49,9 @@ const theme = {
     },
     error: ERROR_TEXT_COLOR,
     headingFont: HEADER_FONT,
-    bodyFont: PRIMARY_FONT,
+    input: {
+        color: INPUT_BG,
+    },
     listItem: {
         bg: TERTIARY_COLOR,
     },

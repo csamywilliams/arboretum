@@ -37,7 +37,7 @@ const Textarea = ({ text, id, name, required, errorText, rows, cols, dispatch })
                     onChange={onChange}
                     onBlur={onChange}
                     className={`textarea ${updateInputClassName}`}
-                ></TextareaStyled>
+                />
             </ContainerStyled>
             {showError && (
                 <ErrorText>

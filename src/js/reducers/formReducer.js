@@ -11,6 +11,7 @@ const addFormConfig = {
         isValid: true,
         value: '',
     },
+    category: '',
 };
 
 const formReducer = (state, action) => {
@@ -22,8 +23,14 @@ const formReducer = (state, action) => {
         },
     });
 
+    const updateKeyValue = () => ({
+        ...state,
+        [action.name]: action.value,
+    });
+
     const actions = {
         update,
+        updateKeyValue,
     };
 
     return actions[action.type]();
