@@ -1,7 +1,12 @@
 import styled from 'styled-components';
+import { devices } from 'utils/devices';
 
 const TextareaStyled = styled.textarea`
     width: 100%;
+    border: none;
+    border-radius: 3px;
+    background-color: ${(props) => props.theme.input.color};
+    font-family: ${(props) => props.theme.bodyFont};
 `;
 
 const ContainerStyled = styled.div`
@@ -16,6 +21,10 @@ const ContainerStyled = styled.div`
         &__error {
             border: 1px solid ${(props) => props.theme.error};
         }
+    }
+
+    @media ${devices.laptopn} {
+        flex-direction: column;
     }
 `;
 

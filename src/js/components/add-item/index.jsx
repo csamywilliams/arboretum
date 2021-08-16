@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 import Button from 'components/button';
 
 import useForm from 'hooks/useForm';
+import categories from 'js/categories';
 
 import InputText from './input-text';
 import Textarea from './text-area';
+import SelectDropdown from './select-dropdown';
 
 import AddItemStyled, { Fieldset, ButtonContainer } from './AddItem.styled';
 
@@ -13,7 +15,7 @@ const AddItem = ({ addDispatch, modalIsOpen }) => {
     const { state, dispatch, isFormValid } = useForm();
 
     const onClick = () => {
-        const { commonName, botanicalName, description } = state;
+        const { commonName, botanicalName, description, category } = state;
 
         addDispatch({
             type: 'add',
@@ -21,6 +23,7 @@ const AddItem = ({ addDispatch, modalIsOpen }) => {
                 commonName: commonName.value,
                 botanicalName: botanicalName.value,
                 description: description.value,
+                category,
             },
         });
 
@@ -49,6 +52,13 @@ const AddItem = ({ addDispatch, modalIsOpen }) => {
                     required
                     minLength={4}
                     dispatch={dispatch}
+                />
+                <SelectDropdown
+                    id="category"
+                    text="Choose species"
+                    name="category"
+                    dispatch={dispatch}
+                    options={Object.values(categories)}
                 />
                 <Textarea id="description" text="Description" name="description" minLength={4} dispatch={dispatch} />
             </Fieldset>

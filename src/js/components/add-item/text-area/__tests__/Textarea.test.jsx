@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import renderWithTheme from '__testHelpers__/renderWithTheme';
 
-import Textarea from '../';
+import Textarea from '..';
 
 const textareaId = 'textarea';
 const textareaName = 'description';

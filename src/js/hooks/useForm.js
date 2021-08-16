@@ -6,7 +6,7 @@ const useForm = () => {
     const [isFormValid, setIsFormValid] = useState(false);
 
     useEffect(() => {
-        const isFormValid = Object.values(state).every((item) => item.isValid);
+        const isFormValid = Object.values(state).every((item) => item.isValid || typeof item === 'string');
 
         setIsFormValid(isFormValid);
     }, [state]);
