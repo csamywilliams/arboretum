@@ -29,8 +29,9 @@ const ContainerStyled = styled.div`
 `;
 
 const Label = styled.label`
-    font-weight: 600;
+    font-weight: 700;
     flex: 0.5;
+    margin: 0.5rem 0;
 `;
 
 const ErrorText = styled.span`

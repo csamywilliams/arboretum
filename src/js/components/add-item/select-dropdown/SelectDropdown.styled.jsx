@@ -2,27 +2,31 @@ import styled from 'styled-components';
 import { devices } from 'utils/devices';
 
 const SelectDropdownStyled = styled.select`
-    flex: 1;
+    width: 50%;
     height: 3rem;
     padding: 0 0 0 0.5rem;
     border: none;
     border-radius: 3px;
     background-color: ${(props) => props.theme.input.color};
     font-family: ${(props) => props.theme.bodyFont};
+
+    @media ${devices.laptop} {
+        width: 100%;
+    }
 `;
 
 const Label = styled.label`
-    font-weight: 600;
+    font-weight: 700;
     flex: 0.5;
+    margin: 0.5rem 0;
 `;
 
 const ContainerStyled = styled.div`
     display: flex;
-    align-items: center;
+    flex-direction: column;
 
     @media ${devices.laptop} {
         align-items: flex-start;
-        flex-direction: column;
     }
 `;
 

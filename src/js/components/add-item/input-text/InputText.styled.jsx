@@ -11,9 +11,9 @@ const InputTextStyled = styled.div`
     }
 
     .input {
-        height: 3rem;
+        line-height: 3rem;
         border: none;
-        border-radius: 3px;
+        border-radius: 0.3rem;
         background-color: ${(props) => props.theme.input.color};
         font-family: ${(props) => props.theme.bodyFont};
 
@@ -29,8 +29,9 @@ const InputTextStyled = styled.div`
 `;
 
 const Label = styled.label`
-    font-weight: 600;
+    font-weight: 700;
     flex: 0.5;
+    margin: 0.5rem 0;
 `;
 
 const ErrorText = styled.span`
