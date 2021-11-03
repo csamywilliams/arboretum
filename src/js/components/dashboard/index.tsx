@@ -11,17 +11,29 @@ import useItems from 'hooks/useItems';
 
 import trees from 'js/trees';
 
+type Item = {
+    botanicalName: string,
+    commonName: string,
+    category: string,
+    description: string,
+};
+
 import { ContentStyled, AsideStyled, MainStyled } from './Dashboard.styled';
 
 const Dashboard = () => {
     const { state, dispatch, originalItems } = useItems(trees);
     const [addModalIsOpen, setAddModalIsOpen] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [item, setItem] = useState({});
+    const [item, setItem] = useState<Item>({
+        botanicalName: "",
+        commonName: "",
+        category: "",
+        description: ""
+    });
 
     const { items } = state;
 
-    const onItemClick = (item) => {
+    const onItemClick = (item: Item) => {
         setItem(item);
         setModalIsOpen(true);
     };
@@ -30,7 +42,7 @@ const Dashboard = () => {
 
     return (
         <div>
-            <Banner>
+            <Banner> 
                 <Button text="Add" onClick={addItem} ariaLabel="Add a tree" primary />
             </Banner>
             <ContentStyled>
@@ -42,15 +54,15 @@ const Dashboard = () => {
                     <ViewList items={items} onClick={onItemClick} />
                 </MainStyled>
             </ContentStyled>
-            <ModalOverlay modalIsOpen={addModalIsOpen} setModalIsOpen={setAddModalIsOpen}>
+            <ModalOverlay modalIsOpen={addModalIsOpen}>
                 <AddItem addDispatch={dispatch} modalIsOpen={setAddModalIsOpen} />
             </ModalOverlay>
-            <ModalOverlay modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen}>
+            <ModalOverlay modalIsOpen={modalIsOpen}>
                 <h1 data-test-id={`modal-item-${item.commonName}`}>{item.commonName}</h1>
                 <h2>{`${item.botanicalName} (${item.category})`}</h2>
                 <p>{item.description}</p>
-                <Button text="Close" ariaLabel="close modal" onClick={() => setModalIsOpen(false)} />
-            </ModalOverlay>
+                <Button text="Close" disabled={false} ariaLabel="close modal" onClick={() => setModalIsOpen(false)} />
+            </ModalOverlay> 
         </div>
     );
 };

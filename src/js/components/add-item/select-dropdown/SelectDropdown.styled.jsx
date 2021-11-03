@@ -20,7 +20,7 @@ const ContainerStyled = styled.div`
     display: flex;
     align-items: center;
 
-    @media ${devices.laptopn} {
+    @media ${devices.laptop} {
         align-items: flex-start;
         flex-direction: column;
     }

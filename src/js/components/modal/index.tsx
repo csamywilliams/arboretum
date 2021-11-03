@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 
 const customStyles = {
@@ -15,19 +14,19 @@ const customStyles = {
     },
 };
 
+type OverlayProps = {
+    children: React.ReactNode,
+    modalIsOpen: boolean,
+};
+
 Modal.setAppElement('#root');
 
-const ModalOverlay = ({ children, modalIsOpen }) => {
+const ModalOverlay = ({ children, modalIsOpen }: OverlayProps) => {
     return (
         <Modal isOpen={modalIsOpen} contentLabel="Modal" style={customStyles}>
             <div>{children}</div>
         </Modal>
     );
-};
-
-ModalOverlay.propTypes = {
-    children: PropTypes.node.isRequired,
-    modalIsOpen: PropTypes.bool.isRequired,
 };
 
 export default ModalOverlay;

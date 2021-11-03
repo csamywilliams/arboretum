@@ -1,6 +1,6 @@
 {
   "name": "arboretum",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "This is a new repo called Feline Finder",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "jest": "jest -c ./config/jest.config.js src",
     "build": "webpack",
     "start": "webpack serve",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "ts": "tsc --watch --preserveWatchOutput"
   },
   "repository": {
     "type": "git",
@@ -27,9 +28,15 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.16.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.0",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.33",
+    "@types/react-dom": "^17.0.10",
+    "@types/styled-components": "^5.1.15",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^27.0.6",
     "babel-loader": "^8.2.2",
@@ -46,7 +53,7 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
-    "html-webpack-plugin": "^4.5.0",
+    "html-webpack-plugin": "^5.5.0",
     "jest": "^27.0.6",
     "jest-canvas-mock": "^2.3.1",
     "jest-styled-components": "^7.0.5",
@@ -55,16 +62,19 @@
     "react-modal": "^3.14.3",
     "regenerator-runtime": "^0.13.7",
     "style-loader": "^2.0.0",
-    "styled-components": "^5.3.0",
+    "styled-components": "^5.3.3",
     "webpack": "^5.11.1",
-    "webpack-cli": "^4.3.1",
-    "webpack-dev-server": "^3.11.1"
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0"
   },
   "dependencies": {
+    "@types/react-modal": "^3.13.1",
     "leaflet": "^1.7.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.2.0",
-    "react-leaflet": "^3.2.1"
+    "react-leaflet": "^3.2.1",
+    "source-map-loader": "^3.0.0",
+    "typescript": "^4.4.4"
   }
 }

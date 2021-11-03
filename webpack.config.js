@@ -3,15 +3,15 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/app.js',
+    entry: './src/app.tsx',
     mode: 'development',
     output: {
         filename: 'dist.js',
-        path: path.join(__dirname, 'public'),
+        path: path.resolve(__dirname, 'build'),
     },
     resolve: {
-        modules: [__dirname, 'src/js/components', 'node_modules'],
-        extensions: ['*', '.js', '.jsx'],
+        modules: [__dirname, './src/js/components', 'node_modules'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
             assets: path.resolve(__dirname, 'src/assets/'),
             components: path.resolve(__dirname, 'src/js/components/'),
@@ -25,7 +25,7 @@ module.exports = {
         rules: [
             {
                 loader: 'babel-loader',
-                test: /\.(js|jsx)$/,
+                test: /\.(js|jsx|ts|tsx)$/,
                 exclude: /node_modules/,
             },
             {
@@ -43,10 +43,14 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.js$/,
+                loader: 'source-map-loader',
+            },
         ],
     },
     devServer: {
-        contentBase: path.join(__dirname, 'public'),
+        static: path.join(__dirname, 'public'),
     },
     plugins: [
         new CleanWebpackPlugin(),
