@@ -1,24 +1,26 @@
 module.exports = {
     verbose: false,
     rootDir: '../',
-    collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,mjs}', '!**/node_modules/**'],
+    preset: 'ts-jest',
+    collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx, mjs}', '!**/node_modules/**'],
     coveragePathIgnorePatterns: [
         'node_modules',
         '.styled.jsx',
         '__integrationTests__',
         '__testHelpers__',
         '__ajaxHandlers__',
-        'app.js',
+        'app.tsx',
     ],
     setupFilesAfterEnv: ['<rootDir>/config/setupTests.js'],
     testMatch: ['<rootDir>/src/**/__tests__/**/*.{js,jsx}', '<rootDir>/src/**/__integration__/**/*.{js,jsx}'],
     testEnvironment: 'jsdom',
     transform: {
-        '^.+\\.(js|jsx)$': '<rootDir>/node_modules/babel-jest',
+        '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
+        'node_modules/variables/.+\\.(j|t)sx?$': 'ts-jest',
         '.+\\.(png|jpg)$': 'jest-transform-stub',
     },
-    transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
-    moduleFileExtensions: ['js', 'jsx'],
+    transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$'],
+    moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
     moduleNameMapper: {
         '^assets(.*)$': '<rootDir>/src/assets$1',
         '^__ajaxHandlers__(.*)$': '<rootDir>/src/__ajaxHandlers__$1',
@@ -39,5 +41,6 @@ module.exports = {
         '__testData__',
         '__testHelpers__',
         '__ajaxHandlers__',
+        'build',
     ],
 };
