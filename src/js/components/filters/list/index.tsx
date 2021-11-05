@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 
 import { groupCategories } from 'utils/transformData';
 
 import ListStyled, { ListItemStyled, ItemLabel } from './List.styled';
 
-const List = ({ options, id, dispatch }) => {
+import { Item } from 'js/types';
+
+type ListProps = {
+	options: Array<Item>,
+	id: string,
+	dispatch: any
+}
+
+const List = ({ options, id, dispatch }: ListProps) => {
 	const [checkedItems, setCheckedItems] = useState([]);
 
 	useEffect(() => {
@@ -15,7 +22,7 @@ const List = ({ options, id, dispatch }) => {
 		});
 	}, [checkedItems]);
 
-	const onChange = (e) => {
+	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { value, checked } = e.target;
 
 		let filterCheck = [...checkedItems];
@@ -50,12 +57,6 @@ const List = ({ options, id, dispatch }) => {
 			})}
 		</ListStyled>
 	);
-};
-
-List.propTypes = {
-	options: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-	id: PropTypes.string.isRequired,
-	dispatch: PropTypes.func.isRequired,
 };
 
 export default List;

@@ -1,9 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import BannerStyled, { Title, Actions } from './Banner.styled';
 
-const Banner = ({ children }) => {
+type BannerProps = {
+    children: React.ReactNode,
+};
+
+const Banner = ({ children }: BannerProps) => {
     return (
         <BannerStyled>
             <Title>The Arboretum</Title>
@@ -11,10 +14,6 @@ const Banner = ({ children }) => {
             <Actions>{children}</Actions>
         </BannerStyled>
     );
-};
-
-Banner.propTypes = {
-    children: PropTypes.node.isRequired,
 };
 
 export default Banner;

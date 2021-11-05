@@ -11,12 +11,7 @@ import useItems from 'hooks/useItems';
 
 import trees from 'js/trees';
 
-type Item = {
-    botanicalName: string,
-    commonName: string,
-    category: string,
-    description: string,
-};
+import { Item } from 'js/types';
 
 import { ContentStyled, AsideStyled, MainStyled } from './Dashboard.styled';
 

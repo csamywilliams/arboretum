@@ -1,11 +1,17 @@
 import React, { Suspense } from 'react';
-import PropTypes from 'prop-types';
 
 import Card from 'components/card';
 
 import ViewListStyled from './ViewList.styled';
 
-const ViewList = ({ items, onClick }) => {
+import { Item } from 'js/types';
+
+type ViewListProps = {
+    items: Array<Item>,
+    onClick: () => void,
+}
+
+const ViewList = ({ items, onClick }: ViewListProps) => {
     return (
         <ViewListStyled>
             <Suspense fallback={<h2>Loading trees...</h2>}>
@@ -15,16 +21,6 @@ const ViewList = ({ items, onClick }) => {
             </Suspense>
         </ViewListStyled>
     );
-};
-
-/* istanbul ignore next */
-ViewList.defaultProps = {
-    onClick() {},
-};
-
-ViewList.propTypes = {
-    items: PropTypes.arrayOf(PropTypes.shape).isRequired,
-    onClick: PropTypes.func,
 };
 
 export default ViewList;
