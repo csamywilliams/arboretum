@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 
 import renderWithTheme from '__testHelpers__/renderWithTheme';
 
-import Banner from '../';
+import Banner from '..';
 
 const setup = () =>
     renderWithTheme(

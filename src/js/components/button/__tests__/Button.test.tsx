@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import renderWithTheme from '__testHelpers__/renderWithTheme';
 
-import Button from '../';
+import Button from '..';
 
 const mockOnClick = jest.fn();
 const buttonText = 'Add a tree';

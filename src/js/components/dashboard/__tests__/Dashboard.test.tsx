@@ -8,7 +8,7 @@ import trees from 'js/trees';
 
 import { hyphenateWord } from 'utils/transformData';
 
-import Dashboard from '../';
+import Dashboard from '..';
 
 const [tree1] = trees;
 

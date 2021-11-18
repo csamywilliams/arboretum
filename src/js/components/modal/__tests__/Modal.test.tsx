@@ -3,7 +3,7 @@ import { screen } from '@testing-library/react';
 
 import renderWithTheme from '__testHelpers__/renderWithTheme';
 
-import Modal from '../';
+import Modal from '..';
 
 const setup = () =>
     renderWithTheme(

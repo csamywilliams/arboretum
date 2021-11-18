@@ -4,7 +4,7 @@ import { screen } from '@testing-library/react';
 import renderWithTheme from '__testHelpers__/renderWithTheme';
 import { testData } from '__testHelpers__/testData';
 
-import Filters from '../';
+import Filters from '..';
 
 const mockDispatch = jest.fn();
 

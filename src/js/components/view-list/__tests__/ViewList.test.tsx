@@ -5,9 +5,9 @@ import renderWithTheme from '__testHelpers__/renderWithTheme';
 
 import { testData } from '__testHelpers__/testData';
 
-import ViewList from '../';
+import ViewList from '..';
 
-const setup = () => renderWithTheme(<ViewList items={testData} />);
+const setup = () => renderWithTheme(<ViewList items={testData} onClick={jest.fn()} />);
 
 describe('ViewList component', () => {
 	beforeEach(setup);
