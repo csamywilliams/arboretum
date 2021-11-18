@@ -12,7 +12,10 @@ module.exports = {
         'app.tsx',
     ],
     setupFilesAfterEnv: ['<rootDir>/config/setupTests.js'],
-    testMatch: ['<rootDir>/src/**/__tests__/**/*.{js,jsx}', '<rootDir>/src/**/__integration__/**/*.{js,jsx}'],
+    testMatch: [
+        '<rootDir>/src/**/__tests__/**/*.{ts,tsx,js,jsx}',
+        '<rootDir>/src/**/__integration__/**/*.{ts,tsx,js,jsx}',
+    ],
     testEnvironment: 'jsdom',
     transform: {
         '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',

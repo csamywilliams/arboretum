@@ -4,6 +4,7 @@ import Banner from 'components/banner';
 import Button from 'components/button';
 import Filters from 'components/filters';
 import ViewList from 'components/view-list';
+import ViewItem from 'components/view-item';
 import AddItem from 'components/add-item';
 import ModalOverlay from 'components/modal';
 
@@ -53,10 +54,7 @@ const Dashboard = () => {
                 <AddItem addDispatch={dispatch} modalIsOpen={setAddModalIsOpen} />
             </ModalOverlay>
             <ModalOverlay modalIsOpen={modalIsOpen}>
-                <h1 data-test-id={`modal-item-${item.commonName}`}>{item.commonName}</h1>
-                <h2>{`${item.botanicalName} (${item.category})`}</h2>
-                <p>{item.description}</p>
-                <Button text="Close" disabled={false} ariaLabel="close modal" onClick={() => setModalIsOpen(false)} />
+                <ViewItem item={item} setModalState={setModalIsOpen} />
             </ModalOverlay> 
         </div>
     );

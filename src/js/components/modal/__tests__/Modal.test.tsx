@@ -14,7 +14,7 @@ const setup = () =>
 
 describe('Modal component', () => {
     beforeEach(setup);
-
+    
     it('should render the Modal component', () => {
         screen.getByText(/Some content/i);
     });
