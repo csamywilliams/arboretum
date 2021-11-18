@@ -8,7 +8,7 @@ import { Item } from 'js/types';
 
 type ViewListProps = {
     items: Array<Item>,
-    onClick: () => void,
+    onClick: any,
 }
 
 const ViewList = ({ items, onClick }: ViewListProps) => {
