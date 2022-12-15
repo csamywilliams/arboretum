@@ -14,7 +14,8 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
             assets: path.resolve(__dirname, 'src/assets/'),
-            components: path.resolve(__dirname, 'src/js/components/'),
+            components: path.resolve(__dirname, 'src/components/'),
+            container: path.resolve(__dirname, 'src/components/'),
             hooks: path.resolve(__dirname, 'src/js/hooks/'),
             reducers: path.resolve(__dirname, 'src/js/reducers/'),
             js: path.resolve(__dirname, 'src/js/'),
@@ -24,8 +25,8 @@ module.exports = {
     module: {
         rules: [
             {
-                loader: 'babel-loader',
                 test: /\.(js|jsx|ts|tsx)$/,
+                use: 'ts-loader',
                 exclude: /node_modules/,
             },
             {

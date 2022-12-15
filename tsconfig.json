@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "allowJs": true,
     "outDir": "./build/",
     "baseUrl": "./src",
@@ -13,7 +13,7 @@
     "paths": {
       "js/*": ["js/*"],
       "components/*": [
-        "js/components/*"
+        "components/*"
       ],
       "hooks/*": [
         "js/hooks/*"
@@ -23,6 +23,9 @@
       ],
       "utils/*": [
         "js/utils/*"
+      ],
+      "container/*": [
+        "container/*"
       ],
     }
   },
