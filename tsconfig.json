@@ -30,7 +30,8 @@
     }
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "./config/setupTests.ts"
   ],
   "exclude": [
     "node_modules",

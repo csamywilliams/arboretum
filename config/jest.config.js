@@ -11,18 +11,16 @@ module.exports = {
         '__ajaxHandlers__',
         'app.tsx',
     ],
-    setupFilesAfterEnv: ['<rootDir>/config/setupTests.js'],
+    setupFilesAfterEnv: ['<rootDir>/config/setupTests.ts'],
     testMatch: [
         '<rootDir>/src/**/__tests__/**/*.{ts,tsx,js,jsx}',
-        '<rootDir>/src/**/__integration__/**/*.{ts,tsx,js,jsx}',
+        '<rootDir>/src/**/*.test.{ts,tsx,js,jsx}',
     ],
     testEnvironment: 'jsdom',
     transform: {
-        '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
-        'node_modules/variables/.+\\.(j|t)sx?$': 'ts-jest',
-        '.+\\.(png|jpg)$': 'jest-transform-stub',
+        '^.+\\.ts?$': 'ts-jest',
     },
-    transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$'],
+    transformIgnorePatterns: ['<rootDir>/node_modules/'],
     moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
     moduleNameMapper: {
         '^assets(.*)$': '<rootDir>/src/assets$1',

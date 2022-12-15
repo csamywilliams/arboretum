@@ -1,4 +1,3 @@
-
 const Dashboard = () => {
     return (
         <h1>hi</h1>

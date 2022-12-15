@@ -21,6 +21,7 @@
             "error",
             "1tbs"
         ],
+        "react/react-in-jsx-scope": "off",
         "camelcase": "warn",
         "indent": 0,
         "jsx-a11y/label-has-associated-control": [
