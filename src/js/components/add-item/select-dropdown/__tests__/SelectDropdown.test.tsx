@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 
 import renderWithTheme from '__testHelpers__/renderWithTheme';
 
-import SelectDropdown from '../';
+import SelectDropdown from '..';
 
 const selectId = 'select-dropdown';
 const selectName = 'category';

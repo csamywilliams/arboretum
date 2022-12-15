@@ -1,9 +1,17 @@
 import React, { useEffect } from 'react';
-import PropTypes from 'prop-types';
 
 import SelectDropdownStyled, { SelectOption, Label, ContainerStyled } from './SelectDropdown.styled';
+import {Dispatch} from 'js/types';
 
-const SelectDropdown = ({ text, id, name, options, dispatch }) => {
+type Props = {
+    text: string,
+    id: string,
+    name: string,
+    options: string[],
+    dispatch: (message: Dispatch) => {}
+}
+
+const SelectDropdown = ({ text, id, name, options, dispatch }: Props) => {
     useEffect(() => {
         const firstOption = options[0];
 
@@ -12,9 +20,9 @@ const SelectDropdown = ({ text, id, name, options, dispatch }) => {
             value: firstOption,
             name,
         });
-    }, []);
+    }, [dispatch, options, name]);
 
-    const onChange = (e) => {
+    const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const { value } = e.target;
 
         dispatch({
@@ -37,14 +45,6 @@ const SelectDropdown = ({ text, id, name, options, dispatch }) => {
             </SelectDropdownStyled>
         </ContainerStyled>
     );
-};
-
-SelectDropdown.propTypes = {
-    id: PropTypes.string.isRequired,
-    dispatch: PropTypes.func.isRequired,
-    name: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    options: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default SelectDropdown;

@@ -4,41 +4,53 @@ import userEvent from '@testing-library/user-event';
 
 import renderWithTheme from '__testHelpers__/renderWithTheme';
 
-import Textarea from '..';
+import InputText from '..';
 
-const textareaId = 'textarea';
-const textareaName = 'description';
-const textareaLabel = 'description';
+const inputTextId = 'input-text';
+const inputTextName = 'some-name';
+const inputTextLabel = 'Input text:';
 
 const validationError = /please enter a value/i;
 
-const setup = ({ required }) =>
+type Props = {
+    required: boolean
+}
+
+const setup = ({ required }: Props) =>
     renderWithTheme(
-        <Textarea id={textareaId} name={textareaName} text={textareaLabel} required={required} dispatch={jest.fn()} />
+        <InputText
+            id={inputTextId}
+            name={inputTextName}
+            text={inputTextLabel}
+            required={required}
+            dispatch={jest.fn()}
+        />
     );
 
 describe('InputText component', () => {
     it('should render the InputText component', () => {
         setup({ required: false });
-        screen.getByText(textareaLabel);
+        screen.getByText(inputTextLabel);
 
         screen.getByRole('textbox', {
-            name: textareaLabel,
+            name: inputTextLabel,
         });
     });
 
     it('should render the error text when no value has been entered', () => {
         setup({ required: true });
 
-        const textarea = screen.getByRole('textbox', {
-            name: textareaLabel,
+        const textbox = screen.getByRole('textbox', {
+            name: inputTextLabel,
         });
 
-        userEvent.type(textarea, 'hey');
+        screen.getByText(inputTextLabel);
+
+        userEvent.type(textbox, 'hey');
 
         expect(screen.queryByText(validationError)).toBeNull();
 
-        userEvent.type(textarea, '{selectall}{del}');
+        userEvent.type(textbox, '{selectall}{del}');
 
         screen.getByText(validationError);
     });
@@ -46,15 +58,17 @@ describe('InputText component', () => {
     it('should not render the error text when no value has been entered for a not required field', () => {
         setup({ required: false });
 
-        const textarea = screen.getByRole('textbox', {
-            name: textareaLabel,
+        const textbox = screen.getByRole('textbox', {
+            name: inputTextLabel,
         });
 
-        userEvent.type(textarea, 'hey');
+        screen.getByText(inputTextLabel);
+
+        userEvent.type(textbox, 'hey');
 
         expect(screen.queryByText(validationError)).toBeNull();
 
-        userEvent.type(textarea, '{selectall}{del}');
+        userEvent.type(textbox, '{selectall}{del}');
         expect(screen.queryByText(validationError)).toBeNull();
     });
 });

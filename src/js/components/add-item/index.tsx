@@ -11,7 +11,12 @@ import SelectDropdown from './select-dropdown';
 
 import AddItemStyled, { Fieldset, ButtonContainer } from './AddItem.styled';
 
-const AddItem = ({ addDispatch, modalIsOpen }) => {
+type AddProps = {
+    addDispatch: ({}) => {},
+    modalIsOpen: (boolean) => {}
+}
+
+const AddItem = ({ addDispatch, modalIsOpen }: AddProps) => {
     const { state, dispatch, isFormValid } = useForm();
 
     const onClick = () => {

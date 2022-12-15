@@ -4,49 +4,41 @@ import userEvent from '@testing-library/user-event';
 
 import renderWithTheme from '__testHelpers__/renderWithTheme';
 
-import InputText from '../';
+import Textarea from '..';
 
-const inputTextId = 'input-text';
-const inputTextName = 'some-name';
-const inputTextLabel = 'Input text:';
+const textareaId = 'textarea';
+const textareaName = 'description';
+const textareaLabel = 'description';
 
 const validationError = /please enter a value/i;
 
-const setup = ({ required }) =>
+const setup = ({ required }: {required: boolean}) =>
     renderWithTheme(
-        <InputText
-            id={inputTextId}
-            name={inputTextName}
-            text={inputTextLabel}
-            required={required}
-            dispatch={jest.fn()}
-        />
+        <Textarea id={textareaId} name={textareaName} text={textareaLabel} required={required} dispatch={jest.fn()} />
     );
 
 describe('InputText component', () => {
     it('should render the InputText component', () => {
         setup({ required: false });
-        screen.getByText(inputTextLabel);
+        screen.getByText(textareaLabel);
 
         screen.getByRole('textbox', {
-            name: inputTextLabel,
+            name: textareaLabel,
         });
     });
 
     it('should render the error text when no value has been entered', () => {
         setup({ required: true });
 
-        const textbox = screen.getByRole('textbox', {
-            name: inputTextLabel,
+        const textarea = screen.getByRole('textbox', {
+            name: textareaLabel,
         });
 
-        screen.getByText(inputTextLabel);
-
-        userEvent.type(textbox, 'hey');
+        userEvent.type(textarea, 'hey');
 
         expect(screen.queryByText(validationError)).toBeNull();
 
-        userEvent.type(textbox, '{selectall}{del}');
+        userEvent.type(textarea, '{selectall}{del}');
 
         screen.getByText(validationError);
     });
@@ -54,17 +46,15 @@ describe('InputText component', () => {
     it('should not render the error text when no value has been entered for a not required field', () => {
         setup({ required: false });
 
-        const textbox = screen.getByRole('textbox', {
-            name: inputTextLabel,
+        const textarea = screen.getByRole('textbox', {
+            name: textareaLabel,
         });
 
-        screen.getByText(inputTextLabel);
-
-        userEvent.type(textbox, 'hey');
+        userEvent.type(textarea, 'hey');
 
         expect(screen.queryByText(validationError)).toBeNull();
 
-        userEvent.type(textbox, '{selectall}{del}');
+        userEvent.type(textarea, '{selectall}{del}');
         expect(screen.queryByText(validationError)).toBeNull();
     });
 });

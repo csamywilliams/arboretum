@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
 import { RiErrorWarningLine } from 'react-icons/ri';
-import PropTypes from 'prop-types';
+import {Dispatch} from 'js/types';
 
 import InputTextStyled, { Label, ErrorText, ValidatedInputStyled } from './InputText.styled';
 
-const InputText = ({ text, id, name, required, minLength, errorText, dispatch }) => {
+type Props = {
+    text: string,
+    id: string,
+    name: string,
+    required: boolean,
+    minLength?: number,
+    errorText?: string,
+    dispatch: (message: Dispatch) => void
+}
+
+const InputText = ({ text, id, name, required, minLength, errorText, dispatch }: Props) => {
     const [showError, setShowError] = useState(false);
 
-    const onChange = (e) => {
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = e.target;
 
         setShowError(required && value === '');
@@ -46,22 +56,6 @@ const InputText = ({ text, id, name, required, minLength, errorText, dispatch })
             )}
         </ValidatedInputStyled>
     );
-};
-
-InputText.defaultProps = {
-    required: false,
-    minLength: 4,
-    errorText: 'Please enter a value',
-};
-
-InputText.propTypes = {
-    id: PropTypes.string.isRequired,
-    dispatch: PropTypes.func.isRequired,
-    name: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    required: PropTypes.bool,
-    minLength: PropTypes.number,
-    errorText: PropTypes.string,
 };
 
 export default InputText;

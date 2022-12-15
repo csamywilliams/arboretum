@@ -12,4 +12,11 @@ type State = {
   value: number;
 }
 
-export { Item, Reducer, State };
+type Dispatch = {
+  type: string,
+  value: string,
+  name: string,
+  isValid?: boolean
+}
+
+export { Item, Reducer, State, Dispatch };
