@@ -1,27 +1,9 @@
 module.exports = {
-    verbose: false,
-    rootDir: '../',
     preset: 'ts-jest',
+    rootDir: '../src',
     collectCoverageFrom: ['<rootDir>/src/**/*.{js,jsx,ts,tsx, mjs}', '!**/node_modules/**'],
-    coveragePathIgnorePatterns: [
-        'node_modules',
-        '.styled.jsx',
-        '__integrationTests__',
-        '__testHelpers__',
-        '__ajaxHandlers__',
-        'app.tsx',
-    ],
-    setupFilesAfterEnv: ['<rootDir>/config/setupTests.ts'],
-    testMatch: [
-        '<rootDir>/src/**/__tests__/**/*.{ts,tsx,js,jsx}',
-        '<rootDir>/src/**/*.test.{ts,tsx,js,jsx}',
-    ],
+    setupFilesAfterEnv: ['<rootDir>/../config/setupTests.ts'],
     testEnvironment: 'jsdom',
-    transform: {
-        '^.+\\.ts?$': 'ts-jest',
-    },
-    transformIgnorePatterns: ['<rootDir>/node_modules/'],
-    moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx'],
     moduleNameMapper: {
         '^assets(.*)$': '<rootDir>/src/assets$1',
         '^__ajaxHandlers__(.*)$': '<rootDir>/src/__ajaxHandlers__$1',
@@ -33,7 +15,7 @@ module.exports = {
         '^reducers\\/(.*)$': '<rootDir>/src/js/reducers/$1',
         '^utils(.*)$': '<rootDir>/src/js/utils$1',
         '\\.(svg)$': '<rootDir>/src/__mocks__/fileMock.js',
-        '^__testHelpers__(.*)$': '<rootDir>/src/__testHelpers__$1',
+        '^__testHelpers__(.*)$': '<rootDir>/__testHelpers__$1',
     },
     testPathIgnorePatterns: [
         '/node_modules/',

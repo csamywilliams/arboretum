@@ -4,6 +4,8 @@
   "description": "This is a new repo called Feline Finder",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --write \"src/**/**.{js,jsx}\"",
+    "lint": "eslint \"src/**/**.{js,jsx}\" --quiet",
     "test": "npm run jest",
     "test:watch": "npm run jest -- --watch ",
     "test:coverage": "npm run jest -- --coverage",

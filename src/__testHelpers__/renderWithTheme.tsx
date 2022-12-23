@@ -1,10 +1,9 @@
-import React from 'react';
 import { render, configure } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
+import theme from '../theme';
 
 configure({ testIdAttribute: 'data-test-id' });
 
-import theme from '../theme';
 
 const getWrappingComponent =
 	() =>
