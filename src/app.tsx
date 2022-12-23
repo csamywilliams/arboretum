@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import Dashboard from './container/dashboard/dashboard';
+import Dashboard from './container/dashboard/Dashboard';
 import theme from './theme';
 import { ThemeProvider } from 'styled-components';
 import './index.css';

@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react';
-import Dashboard from './Dashboard';
+import Grid from './Grid';
 import renderWithTheme from '__testHelpers__/renderWithTheme';
 
-const renderView = () => renderWithTheme(<Dashboard />);
+const renderView = () => renderWithTheme(<Grid />);
 
-describe("Dashboard", () => {
+describe("Grid", () => {
     it("should render the component", () => {
         renderView();
 
-        expect(screen.getByText('The Arboretum')).toBeInTheDocument();
+        expect(screen.getByText('Prunus cerasifera')).toBeInTheDocument();
     });
 });

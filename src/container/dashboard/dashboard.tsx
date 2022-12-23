@@ -1,7 +1,11 @@
+import Grid from 'components/grid/Grid'
+
 const Dashboard = () => {
     return (
-        <h1>The Arboretum</h1>
-        
+        <>
+            <h1>The Arboretum</h1>
+            <Grid />
+        </>
     );
 };
 
