@@ -1,10 +1,11 @@
 import { Tree } from "data/trees";
+import { FC } from "react";
 
 interface Props {
   tree: Tree;
 }
 
-const Card = ({ tree }: Props) => {
+const Card: FC<Props> = ({ tree }: Props) => {
   return (
     <section>
       <h3>{tree.commonName}</h3>

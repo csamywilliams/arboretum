@@ -1,6 +1,7 @@
 import Grid from "components/grid/Grid";
+import { FC } from "react";
 
-const Dashboard = () => {
+const Dashboard: FC = () => {
   return (
     <>
       <h1>The Arboretum</h1>
