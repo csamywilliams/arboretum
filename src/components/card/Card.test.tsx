@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import Card from "./Card";
 import renderWithTheme from "__testHelpers__/renderWithTheme";
 import Category from "data/categories";

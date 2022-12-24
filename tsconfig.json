@@ -9,33 +9,18 @@
     "sourceMap": true,
     "target": "es5",
     "esModuleInterop": true,
-    "skipLibCheck": true,   
+    "skipLibCheck": true,
+    "downlevelIteration": true,
     "paths": {
       "js/*": ["js/*"],
-      "components/*": [
-        "components/*"
-      ],
-      "hooks/*": [
-        "js/hooks/*"
-      ],
-      "reducers/*": [
-        "js/reducers/*"
-      ],
-      "utils/*": [
-        "js/utils/*"
-      ],
-      "container/*": [
-        "container/*"
-      ],
+      "components/*": ["components/*"],
+      "hooks/*": ["js/hooks/*"],
+      "reducers/*": ["js/reducers/*"],
+      "utils/*": ["js/utils/*"],
+      "container/*": ["container/*"]
     }
   },
-  "include": [
-    "src/**/*",
-    "./config/setupTests.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.styled.jsx"
-  ],
+  "include": ["src/**/*", "./config/setupTests.ts"],
+  "exclude": ["node_modules", "**/*.styled.jsx"],
   "watch": true
 }

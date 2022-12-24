@@ -12,7 +12,7 @@ module.exports = {
         '^hooks(.*)$': '<rootDir>/hooks$1',
         '^data(.*)$': '<rootDir>/data$1',
         '^container(.*)$': '<rootDir>/container$1',
-        '^utils(.*)$': '<rootDir>/utils$1',
+        '^__mocks__(.*)$': '<rootDir>/__mocks__$1',
         '\\.(svg)$': '<rootDir>/__mocks__/fileMock.js',
         '^__testHelpers__(.*)$': '<rootDir>/__testHelpers__$1',
     },
@@ -23,7 +23,6 @@ module.exports = {
         '__mocks__',
         '__testData__',
         '__testHelpers__',
-        '__ajaxHandlers__',
         'build',
     ],
 };

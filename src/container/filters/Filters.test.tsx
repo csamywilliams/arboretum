@@ -1,13 +1,13 @@
 import { screen } from "@testing-library/react";
-import Grid from "./Grid";
+import Filters from "./Filters";
 import renderWithTheme from "__testHelpers__/renderWithTheme";
 
-const renderView = () => renderWithTheme(<Grid />);
+const renderView = () => renderWithTheme(<Filters />);
 
-describe("Grid", () => {
+describe("Filters", () => {
   it("should render the component", () => {
     renderView();
 
-    expect(screen.getByText("Prunus cerasifera")).toBeInTheDocument();
+    expect(screen.getByText("Category:")).toBeInTheDocument();
   });
 });
