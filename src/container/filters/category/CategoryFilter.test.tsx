@@ -2,9 +2,10 @@ import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import CategoryFilter from "./CategoryFilter";
 import renderWithTheme from "__testHelpers__/renderWithTheme";
-import mockTrees from "__mocks__/testData";
+import mockFilter from "__mocks__/testFilters";
 
-const renderView = () => renderWithTheme(<CategoryFilter data={mockTrees} />);
+const renderView = () =>
+  renderWithTheme(<CategoryFilter filters={mockFilter} setFilters={jest.fn} />);
 
 describe("CategoryFilter", () => {
   it("should render the component", () => {
