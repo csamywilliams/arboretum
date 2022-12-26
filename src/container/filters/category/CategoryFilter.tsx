@@ -1,31 +1,47 @@
-import { FilterState } from "container/dashboard/Dashboard";
+import {
+  defaultFilters,
+  FilterState,
+  FilterType,
+} from "container/dashboard/filterReducer";
 import trees, { Tree } from "data/trees";
 import { FC } from "react";
 
 interface Props {
-  setFilters: any;
-  filters: FilterState;
+  dispatch: React.Dispatch<any>;
 }
 
-const CategoryFilter: FC<Props> = ({ setFilters, filters }: Props) => {
+const CategoryFilter: FC<Props> = ({ dispatch }: Props) => {
   const categories = [...new Set(trees.map((tree: Tree) => tree.category))];
 
-  const onClick = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const onChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     const { value } = event.target;
 
-    const updateFilter = {
-      ...filters,
-      category: value,
-    };
+    if (value === "") {
+      return;
+    }
 
-    setFilters(updateFilter);
+    dispatch({
+      type: FilterType.ResetFilter,
+    });
+
+    dispatch({
+      type: FilterType.UpdateFilter,
+      payload: {
+        category: value,
+      },
+    });
   };
 
   return (
     <>
-      <label htmlFor="category-filter">Category:</label>
+      <label htmlFor="category">Category:</label>
 
-      <select name="category" id="category-filter" onChange={onClick}>
+      <select
+        name="category"
+        id="category"
+        data-test-id="category-filter"
+        onChange={onChange}
+      >
         <option value="">--Category--</option>
         {categories.map((category) => {
           return (

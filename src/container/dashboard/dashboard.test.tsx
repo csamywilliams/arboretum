@@ -10,4 +10,12 @@ describe("Dashboard", () => {
 
     expect(screen.getByText("The Arboretum")).toBeInTheDocument();
   });
+
+  describe("Filters", () => {
+    it("should filter a single category", () => {
+      renderView();
+
+      expect(screen.getByText("Category")).toBeInTheDocument();
+    });
+  });
 });

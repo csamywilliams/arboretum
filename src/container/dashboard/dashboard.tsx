@@ -1,23 +1,20 @@
 import Grid from "components/grid/Grid";
 import CategoryFilter from "container/filters/category/CategoryFilter";
-import { FC, useState } from "react";
-
-export interface FilterState {
-  category: string;
-}
-
-const defaultFilters: FilterState = {
-  category: "",
-};
+import trees from "data/trees";
+import { FC, useReducer, useState } from "react";
+import filterReducer, { defaultFilters } from "./filterReducer";
 
 const Dashboard: FC = () => {
-  const [filters, setFilters] = useState(defaultFilters);
+  const [state, dispatch] = useReducer(filterReducer, { data: trees });
+
+  const data = [];
+  const filters = { category: "" };
 
   return (
     <>
       <h1>The Arboretum</h1>
-      <CategoryFilter filters={filters} setFilters={setFilters} />
-      <Grid filters={filters} />
+      <CategoryFilter dispatch={dispatch} />
+      <Grid data={state.data} />
     </>
   );
 };
