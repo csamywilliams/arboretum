@@ -11,7 +11,7 @@ const CardStyled = styled.section`
   cursor: pointer;
 
   & > h3 {
-    margin: 0;
+    margin: 1rem 0;
   }
 
   &:hover {
@@ -36,6 +36,5 @@ const CardTag = styled.span`
   text-transform: lowercase;
   width: max-content;
 `
-
 export default CardStyled;
 export { CardImage, CardTag };

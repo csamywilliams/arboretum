@@ -1,17 +1,28 @@
 import { Tree } from "data/trees";
-import { FC } from "react";
-import CardStyled, { CardTag } from "./Card.styled";
+import { FC, Suspense } from "react";
+import CardStyled, { CardImage, CardTag } from "./Card.styled";
+
+const hyphenateWord = (data) => data.replace(/\s+/g, "-").toLowerCase();
 
 interface Props {
   tree: Tree;
 }
 
 const Card: FC<Props> = ({ tree }: Props) => {
+  const filename = hyphenateWord(tree.botanicalName);
+
   return (
     <CardStyled>
       <h3>{tree.commonName}</h3>
-      <p>{tree.botanicalName}</p>
       <CardTag>{tree.category}</CardTag>
+      <p>{tree.botanicalName}</p>
+      <Suspense fallback={<p>Loading image...</p>}>
+        <CardImage
+          src={`/images/${filename}.png`}
+          alt={`Image of ${tree.commonName}`}
+          onError={(e: any) => (e.target.src = "/images/placeholder.png")}
+        />
+      </Suspense>
     </CardStyled>
   );
 };
