@@ -12,6 +12,7 @@ const CardStyled = styled.section`
 
   & > h3 {
     margin: 1rem 0;
+    height: 4.5rem;
   }
 
   &:hover {
@@ -20,7 +21,7 @@ const CardStyled = styled.section`
 `;
 
 const CardImage = styled.img`
-  margin: 0;
+  margin: 1rem 0;
   padding: 0;
   height: 25vh;
 `;

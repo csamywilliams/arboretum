@@ -15,7 +15,6 @@ const Card: FC<Props> = ({ tree }: Props) => {
     <CardStyled>
       <h3>{tree.commonName}</h3>
       <CardTag>{tree.category}</CardTag>
-      <p>{tree.botanicalName}</p>
       <Suspense fallback={<p>Loading image...</p>}>
         <CardImage
           src={`/images/${filename}.png`}
@@ -23,6 +22,7 @@ const Card: FC<Props> = ({ tree }: Props) => {
           onError={(e: any) => (e.target.src = "/images/placeholder.png")}
         />
       </Suspense>
+      <p>{tree.botanicalName}</p>
     </CardStyled>
   );
 };
