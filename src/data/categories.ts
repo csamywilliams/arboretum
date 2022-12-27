@@ -1,9 +1,9 @@
 const enum CATEGORY {
-    ACER = 'acer',
-    APPLE = 'apple',
-    PLUM = 'plum',
-    MAGNOLIA = 'magnolia',
-    WILLOW = 'willow',
+    ACER = 'ACER',
+    APPLE = 'APPLE',
+    PLUM = 'PLUM',
+    MAGNOLIA = 'MAGNOLIA',
+    WILLOW = 'WILLOW',
 };
 
 export default CATEGORY;

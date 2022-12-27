@@ -5,6 +5,7 @@ import {
 } from "container/dashboard/filterReducer";
 import trees, { Tree } from "data/trees";
 import { FC } from "react";
+import DropdownStyled from "./CategoryFilter.styled";
 
 interface Props {
   dispatch: React.Dispatch<any>;
@@ -34,15 +35,17 @@ const CategoryFilter: FC<Props> = ({ dispatch }: Props) => {
 
   return (
     <>
-      <label htmlFor="category">Category:</label>
+      <label className="screen-reader-offscreen" htmlFor="category">
+        Category:
+      </label>
 
-      <select
+      <DropdownStyled
         name="category"
         id="category"
         data-test-id="category-filter"
         onChange={onChange}
       >
-        <option value="">--Category--</option>
+        <option value="">Category</option>
         {categories.map((category) => {
           return (
             <option key={category} value={category}>
@@ -50,7 +53,7 @@ const CategoryFilter: FC<Props> = ({ dispatch }: Props) => {
             </option>
           );
         })}
-      </select>
+      </DropdownStyled>
     </>
   );
 };

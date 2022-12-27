@@ -15,7 +15,7 @@ describe("Dashboard", () => {
     it("should filter a single category", () => {
       renderView();
 
-      expect(screen.getByText("Category")).toBeInTheDocument();
+      expect(screen.getByLabelText(/Category/i)).toBeInTheDocument();
     });
   });
 });

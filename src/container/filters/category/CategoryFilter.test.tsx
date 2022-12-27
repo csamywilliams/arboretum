@@ -10,7 +10,7 @@ describe("CategoryFilter", () => {
   it("should render the component", () => {
     renderView();
 
-    expect(screen.getByText("--Category--")).toBeInTheDocument();
+    expect(screen.getByLabelText("Category:")).toBeInTheDocument();
   });
 
   it("should click the component", async () => {
@@ -19,6 +19,6 @@ describe("CategoryFilter", () => {
 
     userEvent.click(screen.getByTestId("category-filter"));
 
-    expect(screen.getByText("acer")).toBeInTheDocument();
+    expect(screen.getByText(/acer/i)).toBeInTheDocument();
   });
 });
