@@ -46,6 +46,10 @@ const theme = {
     },
     card: {
         border: SECONDARY_COLOR,
+        tag: {
+            border: SECONDARY_COLOR,
+            color: WHITE,
+        }
     },
     error: ERROR_TEXT_COLOR,
     headingFont: HEADER_FONT,

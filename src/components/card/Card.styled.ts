@@ -10,7 +10,7 @@ const CardStyled = styled.section`
   box-shadow: ${(props) => props.theme.boxShadow} 0px 8px 24px;
   cursor: pointer;
 
-  & > h2 {
+  & > h3 {
     margin: 0;
   }
 
@@ -25,5 +25,17 @@ const CardImage = styled.img`
   height: 25vh;
 `;
 
+const CardTag = styled.span`
+  padding: 0.5rem;
+  border: 1px solid ${(props) => props.theme.card.tag.border};
+  border-radius: 2px;
+  background: ${(props) => props.theme.card.tag.border};
+  color: ${(props) => props.theme.card.tag.color};
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: lowercase;
+  width: max-content;
+`
+
 export default CardStyled;
-export { CardImage };
+export { CardImage, CardTag };
