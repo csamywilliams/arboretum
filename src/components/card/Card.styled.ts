@@ -5,6 +5,7 @@ const CardStyled = styled.section`
   flex-direction: column;
   margin: 1rem;
   min-width: 15vw;
+  height: 50vh;
   border-radius: 5px;
   padding: 0.5rem;
   box-shadow: ${(props) => props.theme.boxShadow} 0px 8px 24px;
