@@ -59,6 +59,9 @@ const theme = {
     listItem: {
         bg: TERTIARY_COLOR,
     },
+    clearButton: {
+        bg: SECONDARY_COLOR
+    }
 };
 
 export default theme;
