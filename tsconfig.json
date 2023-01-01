@@ -12,11 +12,9 @@
     "skipLibCheck": true,
     "downlevelIteration": true,
     "paths": {
-      "js/*": ["js/*"],
       "components/*": ["components/*"],
-      "hooks/*": ["js/hooks/*"],
-      "reducers/*": ["js/reducers/*"],
-      "utils/*": ["js/utils/*"],
+      "utils/*": ["utils/*"],
+      "data/*": ["data/*"],
       "container/*": ["container/*"]
     }
   },

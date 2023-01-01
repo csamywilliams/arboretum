@@ -1,5 +1,6 @@
 import { Tree } from "data/trees";
 import { FC, Suspense, useState } from "react";
+import truncateWords from "utils/truncateWords";
 import CardStyled, { CardImage, CardTag } from "./Card.styled";
 
 const hyphenateWord = (data) => data.replace(/\s+/g, "-").toLowerCase();
@@ -32,7 +33,7 @@ const Card: FC<Props> = ({ tree }: Props) => {
       )}
       {flip && (
         <>
-          <p>{tree.description}</p>
+          <p>{truncateWords(tree.description, 50)}</p>
         </>
       )}
     </CardStyled>

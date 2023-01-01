@@ -6,11 +6,9 @@ module.exports = {
     testEnvironment: 'jsdom',
     moduleNameMapper: {
         '^assets(.*)$': '<rootDir>/assets$1',
-        '^__ajaxHandlers__(.*)$': '<rootDir>/__ajaxHandlers__$1',
-        '^common(.*)$': '<rootDir>/common$1',
         '^components(.*)$': '<rootDir>/components$1',
-        '^hooks(.*)$': '<rootDir>/hooks$1',
         '^data(.*)$': '<rootDir>/data$1',
+        '^utils(.*)$': '<rootDir>/utils$1',
         '^container(.*)$': '<rootDir>/container$1',
         '^__mocks__(.*)$': '<rootDir>/__mocks__$1',
         '\\.(svg)$': '<rootDir>/__mocks__/fileMock.js',
