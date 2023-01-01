@@ -1,6 +1,6 @@
 # The Arboretum
 
-The Arboretum is a personal React project which uses Webpack for bundling and Babel for transpilation. It uses Styled-components and React testing library.
+The Arboretum is a personal React project which uses Webpack for bundling and TS-Jest for transpilation. It uses Styled-components and React testing library.
 
 The motivation behind this project is to document the list of trees currently on the farm. 
 
@@ -16,17 +16,13 @@ The motivation behind this project is to document the list of trees currently on
 
 - Original implementation of showing a map version was to use Canvas, however it became expensive to compute.
 - Volume of images and handling them dynamically
-- Runtime regeneratorRuntime is not defined during asynchronous tests, had to include regenerator-runtime package and import it in the jest setup tests
+- Runtime regeneratorRuntime is not defined during asynchronous tests, had to include regenerator-runtime package and import it in the jest setup tests - This was later fixed by removing Babel and only using TS
 - Use of React-modal and jest testing has become difficult - Solution was to mock the setAppElement but then it still throws errors.
-- Using require.context for dynamic imports for images caused issues with jest. Had to install 'babel-plugin-transform-require-context' and change the babel.config.js to .babelrc to work. Then had to mock require.context in the tests to make it pass.
+- Originally used Babel but later added TS, all of Babel was then removed and replaced with TS-Jest
+- UX decision between having a flipped card to show the details or having a modal.
 
 ### Todo list
 
-- Create collapsable filter list
-- Filter by more than one category (may need architectural restructure)
-- Add lazy loading to items
-- Research into how images are loaded
-- Add/Edit note functionality
 
 
 ## Available Scripts
