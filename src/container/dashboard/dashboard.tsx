@@ -2,6 +2,7 @@ import Grid from "components/grid/Grid";
 import CategoryFilter from "container/filters/category/CategoryFilter";
 import trees from "data/trees";
 import { FC, useReducer, useState } from "react";
+import DashboardStyled from "./Dashboard.styled";
 import filterReducer, { defaultFilters } from "./filterReducer";
 
 const Dashboard: FC = () => {
@@ -11,11 +12,11 @@ const Dashboard: FC = () => {
   const filters = { category: "" };
 
   return (
-    <>
+    <DashboardStyled>
       <h1>The Arboretum</h1>
       <CategoryFilter dispatch={dispatch} />
       <Grid data={state.data} />
-    </>
+    </DashboardStyled>
   );
 };
 
