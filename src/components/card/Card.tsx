@@ -10,7 +10,7 @@ interface Props {
 }
 
 const Card: FC<Props> = ({ tree }: Props) => {
-  const [flip, setFlip] = useState(false);
+  const [flip, setFlip] = useState<boolean>(false);
   const filename = hyphenateWord(tree.botanicalName);
 
   const onClick = () => setFlip(!flip);

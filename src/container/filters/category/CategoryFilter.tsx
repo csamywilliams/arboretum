@@ -8,8 +8,8 @@ interface Props {
 }
 
 const CategoryFilter: FC<Props> = ({ dispatch }: Props) => {
-  const [showClear, setShowClear] = useState(false);
-  const [selectValue, setSelectValue] = useState("");
+  const [showClear, setShowClear] = useState<boolean>(false);
+  const [selectValue, setSelectValue] = useState<string>("");
   const categories = [...new Set(trees.map((tree: Tree) => tree.category))];
 
   const onChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
