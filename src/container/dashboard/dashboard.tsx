@@ -1,4 +1,5 @@
 import Grid from 'components/grid/Grid';
+import Toggle from 'components/toggle/toggle';
 import AddItem from 'container/addItem/AddItem';
 import CategoryFilter from 'container/filters/category/CategoryFilter';
 import Map from 'container/map/Map';
@@ -11,15 +12,20 @@ import filterReducer from './filterReducer';
 const Dashboard: FC = () => {
   const [state, dispatch] = useReducer(filterReducer, { data: trees });
 
-  return (
-    <DashboardStyled>
-      <h1>The Arboretum</h1>
-      <Map />
+  const GridView = (
+    <>
       <div>
         <CategoryFilter dispatch={dispatch} />
         {/* <AddItem /> */}
       </div>
       <Grid data={state.data} />
+    </>
+  );
+
+  return (
+    <DashboardStyled>
+      <h1>The Arboretum</h1>
+      <Toggle SideA={GridView} SideB={<Map />} />
     </DashboardStyled>
   );
 };
