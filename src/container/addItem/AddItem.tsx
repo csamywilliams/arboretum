@@ -1,5 +1,5 @@
-import { FC, useState } from "react";
-import ModalOverlay from "components/modal/Modal";
+import ModalOverlay from 'components/modal/Modal';
+import { FC, useState } from 'react';
 
 const AddItem: FC = () => {
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
@@ -28,7 +28,7 @@ const AddItem: FC = () => {
             />
           </section>
           <section>
-            <input type="submit" value="Add Tree" />
+            <input type="submit" value="Add" />
           </section>
         </form>
         <button onClick={closeModal}>Close</button>

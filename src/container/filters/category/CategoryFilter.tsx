@@ -1,7 +1,8 @@
-import { FC, useState } from "react";
-import { FilterType } from "container/dashboard/filterReducer";
-import trees, { Tree } from "data/trees";
-import DropdownStyled, { ClearButtonStyled } from "./CategoryFilter.styled";
+import { FilterType } from 'container/dashboard/filterReducer';
+import trees, { Tree } from 'data/trees';
+import { FC, useState } from 'react';
+
+import DropdownStyled, { ClearButtonStyled } from './CategoryFilter.styled';
 
 interface Props {
   dispatch: React.Dispatch<any>;
@@ -9,7 +10,7 @@ interface Props {
 
 const CategoryFilter: FC<Props> = ({ dispatch }: Props) => {
   const [showClear, setShowClear] = useState<boolean>(false);
-  const [selectValue, setSelectValue] = useState<string>("");
+  const [selectValue, setSelectValue] = useState<string>('');
   const categories = [...new Set(trees.map((tree: Tree) => tree.category))];
 
   const onChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -24,7 +25,7 @@ const CategoryFilter: FC<Props> = ({ dispatch }: Props) => {
       type: FilterType.ResetFilter,
     });
 
-    if (value === "") {
+    if (value === '') {
       return;
     }
 
@@ -37,7 +38,7 @@ const CategoryFilter: FC<Props> = ({ dispatch }: Props) => {
   };
 
   const onClickClear = (): void => {
-    setSelectValue("");
+    setSelectValue('');
     setShowClear(false);
     dispatch({
       type: FilterType.ResetFilter,

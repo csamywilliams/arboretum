@@ -1,5 +1,5 @@
 const mockFilter = {
-    category: 'acer'
-}
+  category: 'acer',
+};
 
 export default mockFilter;

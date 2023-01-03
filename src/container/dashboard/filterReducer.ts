@@ -1,53 +1,49 @@
-import trees, { Tree } from "data/trees";
+import trees, { Tree } from 'data/trees';
 
 export interface FilterState {
-  data: Array<Tree>
+  data: Array<Tree>;
 }
 
 interface FilterActions {
   type: FilterType.UpdateFilter | FilterType.ResetFilter;
   payload: {
-    category?: string
-  }
+    category?: string;
+  };
 }
 
 export enum FilterType {
   UpdateFilter = 'updateFilter',
-  ResetFilter = 'resetFilter'
+  ResetFilter = 'resetFilter',
 }
 
 const defaultFilters: FilterState = {
-  data: []
+  data: [],
 };
 
 const filterReducer = (
   state: FilterState,
-  action: FilterActions
+  action: FilterActions,
 ): FilterState => {
-
-  if(action.type === FilterType.ResetFilter) {
-     return {
-        ...state,
-        data: trees
+  if (action.type === FilterType.ResetFilter) {
+    return {
+      ...state,
+      data: trees,
     };
   }
 
-  if(action.type === FilterType.UpdateFilter) {
-
+  if (action.type === FilterType.UpdateFilter) {
     const categoryData = state.data.filter((tree) => {
-      return tree.category === action.payload.category
-    })
+      return tree.category === action.payload.category;
+    });
 
     return {
-        ...state,
-        data: categoryData
+      ...state,
+      data: categoryData,
     };
   }
-
-
 
   throw Error('Unknown action: ' + action.type);
 };
- 
+
 export default filterReducer;
-export {defaultFilters};
+export { defaultFilters };

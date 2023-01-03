@@ -25,43 +25,43 @@ const ERROR_TEXT_COLOR = WARNING_RED;
 const INPUT_BG = STONE_GREY;
 
 const theme = {
-    text: FONT_COLOR,
-    bg: BODY_BACKGROUND,
-    bodyFont: PRIMARY_FONT,
-    border: BORDER,
-    boxShadow: BOX_SHADOW,
-    button: {
-        primary: {
-            bg: PRIMARY_COLOR,
-            color: WHITE,
-        },
-        secondary: {
-            bg: SECONDARY_COLOR,
-            color: WHITE,
-        },
-        disabled: {
-            bg: INVERT_SECONDARY_COLOR,
-            color: WHITE,
-        },
+  text: FONT_COLOR,
+  bg: BODY_BACKGROUND,
+  bodyFont: PRIMARY_FONT,
+  border: BORDER,
+  boxShadow: BOX_SHADOW,
+  button: {
+    primary: {
+      bg: PRIMARY_COLOR,
+      color: WHITE,
     },
-    card: {
-        border: SECONDARY_COLOR,
-        tag: {
-            border: SECONDARY_COLOR,
-            color: WHITE,
-        }
+    secondary: {
+      bg: SECONDARY_COLOR,
+      color: WHITE,
     },
-    error: ERROR_TEXT_COLOR,
-    headingFont: HEADER_FONT,
-    input: {
-        color: INPUT_BG,
+    disabled: {
+      bg: INVERT_SECONDARY_COLOR,
+      color: WHITE,
     },
-    listItem: {
-        bg: TERTIARY_COLOR,
+  },
+  card: {
+    border: SECONDARY_COLOR,
+    tag: {
+      border: SECONDARY_COLOR,
+      color: WHITE,
     },
-    clearButton: {
-        bg: SECONDARY_COLOR
-    }
+  },
+  error: ERROR_TEXT_COLOR,
+  headingFont: HEADER_FONT,
+  input: {
+    color: INPUT_BG,
+  },
+  listItem: {
+    bg: TERTIARY_COLOR,
+  },
+  clearButton: {
+    bg: SECONDARY_COLOR,
+  },
 };
 
 export default theme;

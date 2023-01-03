@@ -1,20 +1,19 @@
-import { screen } from "@testing-library/react";
+import { screen } from '@testing-library/react';
+import renderWithTheme from '__testHelpers__/renderWithTheme';
 
-import renderWithTheme from "__testHelpers__/renderWithTheme";
-
-import Modal from "./Modal";
+import Modal from './Modal';
 
 const renderView = () =>
   renderWithTheme(
     <Modal modalIsOpen={true}>
       <p>Some content </p>
-    </Modal>
+    </Modal>,
   );
 
-describe("Modal component", () => {
+describe('Modal component', () => {
   beforeEach(renderView);
 
-  it("should render the Modal component", () => {
+  it('should render the Modal component', () => {
     screen.getByText(/Some content/i);
   });
 });

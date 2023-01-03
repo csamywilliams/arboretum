@@ -1,15 +1,16 @@
-import { screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import Card from "./Card";
-import renderWithTheme from "__testHelpers__/renderWithTheme";
-import mockTrees from "__mocks__/testData";
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import mockTrees from '__mocks__/testData';
+import renderWithTheme from '__testHelpers__/renderWithTheme';
+
+import Card from './Card';
 
 const [tree] = mockTrees;
 
 const renderView = () => renderWithTheme(<Card tree={tree} />);
 
-describe("Card", () => {
-  it("should render the component", () => {
+describe('Card', () => {
+  it('should render the component', () => {
     renderView();
 
     expect(screen.getByText(tree.commonName)).toBeInTheDocument();
@@ -17,7 +18,7 @@ describe("Card", () => {
     expect(screen.getByText(tree.botanicalName)).toBeInTheDocument();
   });
 
-  it("should flip back and for", async () => {
+  it('should flip back and for', async () => {
     renderView();
 
     expect(screen.getByText(tree.commonName)).toBeInTheDocument();

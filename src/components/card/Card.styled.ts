@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const CardStyled = styled.section`
   display: flex;
@@ -37,6 +37,6 @@ const CardTag = styled.span`
   font-weight: bold;
   text-transform: lowercase;
   width: max-content;
-`
+`;
 export default CardStyled;
 export { CardImage, CardTag };

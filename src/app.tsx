@@ -1,8 +1,9 @@
-import { createRoot } from "react-dom/client";
-import Dashboard from "./container/dashboard/Dashboard";
-import theme from "./theme";
-import { ThemeProvider } from "styled-components";
-import "./index.css";
+import { createRoot } from 'react-dom/client';
+import { ThemeProvider } from 'styled-components';
+
+import Dashboard from './container/dashboard/Dashboard';
+import './index.css';
+import theme from './theme';
 
 const App = () => {
   return (
@@ -14,6 +15,6 @@ const App = () => {
   );
 };
 
-const container = document.getElementById("root");
+const container = document.getElementById('root');
 const root = createRoot(container!);
 root.render(<App />);

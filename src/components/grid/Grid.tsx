@@ -1,7 +1,8 @@
-import { FC, Suspense } from "react";
-import trees, { Tree } from "data/trees";
-import Card from "components/card/Card";
-import GridStyled from "./Grid.styled";
+import Card from 'components/card/Card';
+import trees, { Tree } from 'data/trees';
+import { FC, Suspense } from 'react';
+
+import GridStyled from './Grid.styled';
 
 interface Props {
   data: Array<Tree>;
